@@ -8,7 +8,7 @@ public class Main {
         var imageView = new ImageView(new Image());
 
         // How to solve following type error using adapter pattern
-        imageView.apply(new Caramel());
+        imageView.apply(new CaramelAdaptor(new Caramel()));
 
     }
 }
