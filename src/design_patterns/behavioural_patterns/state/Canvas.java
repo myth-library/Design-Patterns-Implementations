@@ -1,33 +1,22 @@
 package design_patterns.behavioural_patterns.state;
 
 public class Canvas {
-    private ToolType currentType;
+    private Tool currentTool;
 
     // How to avoid same implementation repetition
     public void mouseDown() {
-        if (currentType == ToolType.SELECTION)
-            System.out.println("Selection Icon");
-        else if (currentType == ToolType.BRUSH)
-            System.out.println("Brush Icon");
-        else if (currentType == ToolType.ERASER)
-            System.out.println("Eraser Icon");
+        currentTool.mouseDown();
     }
 
     public void mouseUp() {
-        if (currentType == ToolType.SELECTION)
-            System.out.println("Draw dashed rectangle");
-        else if (currentType == ToolType.BRUSH)
-            System.out.println("Draw a line");
-        else if (currentType == ToolType.ERASER)
-            System.out.println("Erase something");
-
+        currentTool.mouseUp();
     }
 
-    public ToolType getCurrentType() {
-        return currentType;
+    public Tool getCurrentTool() {
+        return currentTool;
     }
 
-    public void setCurrentType(ToolType currentType) {
-        this.currentType = currentType;
+    public void setCurrentTool(Tool currentTool) {
+        this.currentTool = currentTool;
     }
 }
